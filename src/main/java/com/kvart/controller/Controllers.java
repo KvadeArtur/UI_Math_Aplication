@@ -15,6 +15,12 @@ public class Controllers {
     private Repo repo;
 
     @GetMapping
+    public String get() {
+
+        return "main";
+    }
+
+    @GetMapping(value = "/math")
     public String get(Map<String, Object> model) {
 
         Number number = new Number( 3);
@@ -25,7 +31,6 @@ public class Controllers {
 
         model.put("value", value);
 
-        return "main";
+        return "math";
     }
-
 }
